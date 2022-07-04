@@ -1,0 +1,41 @@
+@import "variables";
+
+.outlinedButton {
+  transform: skewX(350deg);
+  padding: 0 30px;
+  height: 60px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px $white;
+  cursor: pointer;
+}
+.primaryButton {
+  transform: skewX(350deg);
+  padding: 0 50px;
+  height: 60px;
+  background-color: $primaryBtnBGC;
+  color: $white;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  &:after {
+    content: "";
+    top: 0;
+    right: -13px;
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background-color: #fff;
+    cursor: pointer;
+  }
+}
+.secondaryButton {
+  padding: 16px 60px;
+  background-color: $secondaryBtnBGC;
+  cursor: pointer;
+  color: $white;
+  border: none;
+}

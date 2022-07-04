@@ -1,0 +1,141 @@
+@import "variables";
+
+header {
+  display: flex;
+  width: 100%;
+  background-color: $black;
+  color: $white;
+  position: fixed;
+  z-index: 1000;
+  .menu-icon {
+    display: none;
+    position: absolute;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1000;
+    left: 58px;
+    top: 60px;
+
+    &::after,
+    &::before,
+    span {
+      right: 0;
+      position: absolute;
+      height: 10%;
+      width: 100%;
+      transition: all 0.3s ease 0s;
+      background-color: $white;
+    }
+    &::before,
+    &::after {
+      content: "";
+    }
+    &::before {
+      top: 2px;
+    }
+    &::after {
+      bottom: 0;
+    }
+    span {
+      top: 50%;
+    }
+    &--active {
+      span {
+        right: 50%;
+      }
+      &::before {
+        right: 10%;
+      }
+      &::after {
+        right: 20%;
+      }
+    }
+    @media (max-width: 1627px) {
+      display: block;
+    }
+  }
+  .nav {
+    &--active {
+      left: 0;
+    }
+    .logo {
+      cursor: pointer;
+      @media (max-width: 1627px) {
+        margin-left: 100px;
+      }
+    }
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 1300px) {
+      padding: 30px 20px;
+    }
+    .navList {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      @media (max-width: 1627px) {
+        position: absolute;
+        top: 0;
+        left: 400%;
+        width: 100vw;
+        min-height: 100vh;
+        background-color: #131313;
+        padding: 66px 28px 5rem 26px;
+        overflow: auto;
+        transition: left 0.3s ease 0s;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 100px;
+        height: 560px;
+        flex-direction: column;
+        &--active {
+          left: 0;
+          width: 100vw;
+        }
+      }
+      &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        margin-right: 42px;
+        cursor: pointer;
+        height: 54px;
+
+        @media (max-width: 1627px) {
+          width: 100%;
+          display: block;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 36px;
+          line-height: 150%;
+        }
+      }
+    }
+    .Buttons {
+      min-width: 330px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      @media (max-width: 656px) {
+        display: none;
+        &--active {
+          display: flex;
+          position: absolute;
+          top: calc(100vh - 200px);
+          left: 40px;
+        }
+      }
+    }
+  }
+}
